@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "6abfb4415cfe52a9bd979afd"
+  },
+  "title": "The Alchemist",
+  "author": "Paulo Coelho",
+  "category": "Fiction",
+  "isbn": "9780061122415",
+  "quantity": 5,
+  "available_quantity": 5
+},
+{
+  "_id": {
+    "$oid": "6abfb45d5cfe52a9bd979aff"
+  },
+  "title": "Wings of Fire",
+  "author": "A.P.J. Abdul Kalam",
+  "category": "Biography",
+  "isbn": "9788173711466",
+  "quantity": 3,
+  "available_quantity": 3
+},
+{
+  "_id": {
+    "$oid": "6abfb4705cfe52a9bd979b01"
+  },
+  "title": "Introduction to Algorithms",
+  "author": "Thomas H. Cormen",
+  "category": "Computer Science",
+  "isbn": "9780262033848",
+  "quantity": 2,
+  "available_quantity": 2
+},
+{
+  "_id": {
+    "$oid": "6abfb4a35cfe52a9bd979b03"
+  },
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "category": "Programming",
+  "isbn": "9780132350884",
+  "quantity": 4,
+  "available_quantity": 4
+}]
