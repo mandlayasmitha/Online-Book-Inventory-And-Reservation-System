@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "6abfb62b5cfe52a9bd979b0b"
+  },
+  "user_id": {
+    "$oid": "6abfb35e5cfe52a9bd979af1"
+  },
+  "book_id": {
+    "$oid": "6abfb4415cfe52a9bd979afd"
+  },
+  "reservation_date": "2026-10-02",
+  "status": "Reserved"
+}]
