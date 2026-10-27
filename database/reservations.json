@@ -1,13 +1,119 @@
-[{
-  "_id": {
-    "$oid": "6abfb62b5cfe52a9bd979b0b"
+[
+  {
+    "_id": {
+      "$oid": "6abfb62b5cfe52a9bd979b0b"
+    },
+    "user_id": {
+      "$oid": "6abfb35e5cfe52a9bd979af1"
+    },
+    "book_id": {
+      "$oid": "6abfb4415cfe52a9bd979afd"
+    },
+    "reservation_date": "2026-10-02",
+    "status": "Reserved"
   },
-  "user_id": {
-    "$oid": "6abfb35e5cfe52a9bd979af1"
+  {
+    "_id": {
+      "$oid": "6abfb62b5cfe52a9bd979b0c"
+    },
+    "user_id": {
+      "$oid": "6abfb38c5cfe52a9bd979af3"
+    },
+    "book_id": {
+      "$oid": "6abfb4415cfe52a9bd979b01"
+    },
+    "reservation_date": "2026-10-03",
+    "status": "Reserved"
   },
-  "book_id": {
-    "$oid": "6abfb4415cfe52a9bd979afd"
+  {
+    "_id": {
+      "$oid": "6abfb62b5cfe52a9bd979b0d"
+    },
+    "user_id": {
+      "$oid": "6abfb35e5cfe52a9bd979af1"
+    },
+    "book_id": {
+      "$oid": "6abfb4415cfe52a9bd979b03"
+    },
+    "reservation_date": "2026-10-04",
+    "status": "Completed"
   },
-  "reservation_date": "2026-10-02",
-  "status": "Reserved"
-}]
+  {
+    "_id": {
+      "$oid": "6abfb62b5cfe52a9bd979b0e"
+    },
+    "user_id": {
+      "$oid": "6abfb38c5cfe52a9bd979af3"
+    },
+    "book_id": {
+      "$oid": "6abfb4415cfe52a9bd979b05"
+    },
+    "reservation_date": "2026-10-04",
+    "status": "Reserved"
+  },
+  {
+    "_id": {
+      "$oid": "6abfb62b5cfe52a9bd979b0f"
+    },
+    "user_id": {
+      "$oid": "6abfb35e5cfe52a9bd979af1"
+    },
+    "book_id": {
+      "$oid": "6abfb4415cfe52a9bd979b06"
+    },
+    "reservation_date": "2026-10-05",
+    "status": "Reserved"
+  },
+  {
+    "_id": {
+      "$oid": "6abfb62b5cfe52a9bd979b10"
+    },
+    "user_id": {
+      "$oid": "6abfb38c5cfe52a9bd979af3"
+    },
+    "book_id": {
+      "$oid": "6abfb4415cfe52a9bd979b07"
+    },
+    "reservation_date": "2026-10-05",
+    "status": "Completed"
+  },
+  {
+    "_id": {
+      "$oid": "6abfb62b5cfe52a9bd979b11"
+    },
+    "user_id": {
+      "$oid": "6abfb35e5cfe52a9bd979af1"
+    },
+    "book_id": {
+      "$oid": "6abfb4415cfe52a9bd979b11"
+    },
+    "reservation_date": "2026-10-06",
+    "status": "Reserved"
+  },
+  {
+    "_id": {
+      "$oid": "6abfb62b5cfe52a9bd979b12"
+    },
+    "user_id": {
+      "$oid": "6abfb38c5cfe52a9bd979af3"
+    },
+    "book_id": {
+      "$oid": "6abfb4415cfe52a9bd979b13"
+    },
+    "reservation_date": "2026-10-06",
+    "status": "Cancelled"
+  },
+  {
+    "_id": {
+      "$oid": "6abfb62b5cfe52a9bd979b13"
+    },
+    "user_id": {
+      "$oid": "6abfb35e5cfe52a9bd979af1"
+    },
+    "book_id": {
+      "$oid": "6abfb4415cfe52a9bd979b16"
+    },
+    "reservation_date": "2026-10-07",
+    "status": "Reserved"
+  }
+]
