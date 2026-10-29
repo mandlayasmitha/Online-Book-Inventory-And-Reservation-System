@@ -1,5 +1,9 @@
+
+import AdminPanel from "./admin/AdminPanel";
 import { useState, useEffect } from "react";
 import "./App.css";
+
+const API = "http://localhost:5001/api";
 
 const initialBooks = [
   { id: 1, title: "The Alchemist", author: "Paulo Coelho", category: "Fiction", isbn: "9780061122415", quantity: 5 },
@@ -25,6 +29,7 @@ const initialBooks = [
 ];
 
 function App() {
+  const [showAdmin, setShowAdmin] = useState(false);
   const [books, setBooks] = useState(initialBooks);
   const [search, setSearch] = useState("");
 
@@ -54,7 +59,7 @@ function App() {
       .includes(search.toLowerCase())
   );
 
-  function reserveBook(book) {
+  async function reserveBook(book) {
     if (!issueDate || !returnDate) {
       setMessage("Please select both issue and return dates.");
       return;
@@ -81,27 +86,49 @@ function App() {
       return;
     }
 
-    const newReservation = {
-      id: Date.now(),
-      bookId: book.id,
-      title: book.title,
-      author: book.author,
-      issueDate,
-      returnDate,
-      status: "Reserved",
-    };
+    try {
+      const response = await fetch(`${API}/reservations`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userName: localStorage.getItem("userName") || "Guest User",
+          bookTitle: book.title,
+          reservationDate: issueDate,
+        }),
+      });
 
-    setReservations((previous) => [...previous, newReservation]);
+      const data = await response.json();
 
-    setBooks((previous) =>
-      previous.map((item) =>
-        item.id === book.id
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
-    );
+      if (!response.ok) {
+        throw new Error(data.message || "Reservation failed.");
+      }
 
-    setMessage(`${book.title} reserved successfully!`);
+      const newReservation = {
+        id: data.reservation?._id || Date.now(),
+        bookId: book.id,
+        title: book.title,
+        author: book.author,
+        issueDate,
+        returnDate,
+        status: "Reserved",
+      };
+
+      setReservations((previous) => [...previous, newReservation]);
+
+      setBooks((previous) =>
+        previous.map((item) =>
+          item.id === book.id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+      );
+
+      setMessage(`${book.title} reserved successfully!`);
+    } catch (error) {
+      setMessage(error.message || "Unable to reserve book.");
+    }
   }
 
   function cancelReservation(reservation) {
@@ -131,6 +158,10 @@ function App() {
       statusFilter === "All" || reservation.status === statusFilter
   );
 
+  if (showAdmin) {
+    return <AdminPanel onBack={() => setShowAdmin(false)} />;
+  }
+
   return (
     <div className="app">
       <nav className="navbar">
@@ -143,6 +174,7 @@ function App() {
           <a href="#home">Home</a>
           <a href="#books">Books</a>
           <a href="#reservations">My Reservations</a>
+          <button onClick={() => setShowAdmin(true)}>Admin</button>
         </div>
       </nav>
 
